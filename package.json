@@ -1,0 +1,29 @@
+{
+  "name": "fumble",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "node parcel.config.js",
+    "build": "cross-env NODE_ENV=production node parcel.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "bracketSpacing": true
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "parcel-bundler": "^1.12.4",
+    "cross-env": "^6.0.3"
+  },
+  "dependencies": {
+    "idb": "^4.0.5",
+    "preact": "^10.0.5"
+  }
+}
