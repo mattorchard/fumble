@@ -21,7 +21,9 @@ const dbPromise = openDB("text-repository", 1, {
   },
 });
 
-const summarize = (text, summaryLength = 144) => {
+const createKey = ({ elementUid, href }) => `${elementUid}--${href}`;
+
+const summarize = (text, summaryLength = 288) => {
   const length = text.length;
   if (length <= summaryLength / 2) {
     return {
@@ -87,7 +89,7 @@ export const getRecentSaveMetas = async (quantity = 5) => {
 
   const recentSaves = [];
   while (cursor && recentSaves.length < quantity) {
-    recentSaves.push({ ...cursor.value });
+    recentSaves.push({ ...cursor.value, key: createKey(cursor.value) });
     cursor = await cursor.continue();
   }
 

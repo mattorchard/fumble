@@ -1,0 +1,6 @@
+.recent-saves__list {
+  list-style-type: none;
+}
+.recent-saves__list-item {
+  margin: 1rem 0;
+}

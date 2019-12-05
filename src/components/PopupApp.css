@@ -1,0 +1,35 @@
+body {
+  width: 600px;
+  color: white;
+  background: radial-gradient(circle at 75% 75%, #4e4f56, #393a40);
+}
+.app__header {
+  padding: 1rem 1rem 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(20, 20, 20, 0.3);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app__header__brand {
+  font-size: 2rem;
+  cursor: default;
+  user-select: none;
+}
+.app__header__brand--e {
+  transform: scale(-1, 1);
+  display: inline-block;
+}
+.app__header__button {
+  text-decoration: none;
+  border-radius: 1000px;
+  background-color: #259eb2;
+  color: white;
+  padding: 0.1rem 0.6rem 0.4rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+.app__main {
+  margin: 0 1rem 1rem;
+}

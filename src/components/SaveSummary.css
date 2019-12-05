@@ -1,4 +1,30 @@
-.save-summary__heading {
+.save-summary {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+.save-summary__heading {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.save-summary__heading__link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+.save-summary__heading__link::before {
+  content: "#";
+  margin-right: 0.5rem;
+  opacity: 0.6;
+}
+.save-summary__summary {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.save-summary:hover .save-summary__summary,
+.save-summary:focus-within .save-summary__summary {
+  opacity: 1;
 }
