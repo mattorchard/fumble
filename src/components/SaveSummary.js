@@ -2,10 +2,16 @@ import { h } from "preact";
 import "./SaveSummary.css";
 import useLiveRelativeTime from "../hooks/useLiveRelativeTime";
 import { getSavedText } from "../repositories/text-repository";
+import { toast } from "../helpers/toast";
 
 const copyIntoClipboard = async compositeKey => {
-  const text = await getSavedText(compositeKey);
-  return navigator.clipboard.writeText(text);
+  try {
+    const text = await getSavedText(compositeKey);
+    await navigator.clipboard.writeText(text);
+    toast.success("Copied to clipboard");
+  } catch (error) {
+    toast.error("Failed to copy");
+  }
 };
 
 const SaveSummary = ({ saveMeta }) => {
