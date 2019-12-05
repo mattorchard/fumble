@@ -1,0 +1,78 @@
+.toast-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.toast-container > * {
+  margin-bottom: 0.5rem;
+}
+
+.toast-message {
+  position: relative;
+  background-color: #2bc959;
+  animation: toast-slide-in-out 10s ease-in-out 1;
+  animation-fill-mode: forwards;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@keyframes toast-slide-in-out {
+  0% {
+    transform: translateY(-100%);
+  }
+  5% {
+    transform: translateY(0);
+  }
+  95% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.toast-message:hover,
+.toast-message:focus-within {
+  animation-play-state: paused;
+}
+.toast-message__body {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  padding: 1rem;
+}
+.toast-message__dismiss {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 0.25rem;
+  top: 0;
+  right: 0;
+}
+.toast-message__progress {
+  display: flex;
+  height: 0.5rem;
+}
+.toast-message__progress-filled {
+  background-color: white;
+  width: 0;
+  animation: fill-progress 10s linear 1;
+  animation-fill-mode: forwards;
+}
+.toast-message:hover .toast-message__progress-filled,
+.toast-message:focus-within .toast-message__progress-filled {
+  animation-play-state: paused;
+}
+@keyframes fill-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

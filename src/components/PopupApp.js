@@ -1,6 +1,7 @@
 import { Fragment, render, h } from "preact";
 import RecentSaves from "./RecentSaves";
 import "./PopupApp.css";
+import ToastContainer from "./ToastContainer";
 
 const App = (
   <Fragment>
@@ -15,6 +16,7 @@ const App = (
     <main className="app__main">
       <RecentSaves />
     </main>
+    <ToastContainer />
   </Fragment>
 );
 
