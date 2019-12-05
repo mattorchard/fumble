@@ -33,7 +33,16 @@ const saveTextDebounced = (() => {
   };
 })();
 
+const isPasswordField = element =>
+  element.tagName &&
+  element.tagName.toUpperCase() === "INPUT" &&
+  element.type &&
+  element.type.toUpperCase() === "PASSWORD";
+
 const globalInputHandler = event => {
+  if (isPasswordField(event.target)) {
+    return;
+  }
   const { value } = event.target;
   if (value && value.length >= SAVE_AFTER_LENGTH) {
     saveTextDebounced({
