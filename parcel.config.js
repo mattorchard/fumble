@@ -9,6 +9,7 @@ const entryFiles = [
   "./src/content.js",
   "./src/options.html",
   "./src/popup.html",
+  "./src/saves.html",
 ].map(resolvePath);
 
 const options = { hmr: false };

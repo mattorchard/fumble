@@ -1,11 +1,11 @@
 import { render, h } from "preact";
 import GreyList from "./GreyList";
 
-const App = (
+const OptionsApp = (
   <div>
     <h1>Hello Options!</h1>
     <GreyList />
   </div>
 );
 
-render(App, document.getElementById("root"));
+render(OptionsApp, document.getElementById("root"));

@@ -4,7 +4,7 @@ import "./PopupApp.css";
 import ToastContainer from "./ToastContainer";
 import PopupFooter from "./PopupFooter";
 
-const App = (
+const PopupApp = (
   <Fragment>
     <header className="app__header">
       <h1 className="app__header__brand">
@@ -22,4 +22,4 @@ const App = (
   </Fragment>
 );
 
-render(App, document.getElementById("root"));
+render(PopupApp, document.getElementById("root"));
