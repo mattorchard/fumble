@@ -95,3 +95,9 @@ export const getRecentSaveMetas = async (quantity = 5) => {
 
   return recentSaves;
 };
+
+export const getSavedText = async ({ href, elementUid }) => {
+  const db = await dbPromise;
+  const textObject = await db.get(STORE_TEXT, [href, elementUid]);
+  return textObject ? textObject.text : null;
+};
