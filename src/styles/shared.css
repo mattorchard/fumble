@@ -92,7 +92,10 @@ nav ul {
   --color-scroll-bg: #393a40;
   --color-scroll-thumb-bg: #26272d;
 }
-
+body {
+  color: white;
+  background: radial-gradient(circle at 75% 75%, #4e4f56, #393a40);
+}
 body::-webkit-scrollbar {
   width: 11px;
 }
