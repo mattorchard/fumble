@@ -101,3 +101,8 @@ export const getSavedText = async ({ href, elementUid }) => {
   const textObject = await db.get(STORE_TEXT, [href, elementUid]);
   return textObject ? textObject.text : null;
 };
+
+export const getSavesCount = async () => {
+  const db = await dbPromise;
+  return db.count(STORE_TEXT_META);
+};

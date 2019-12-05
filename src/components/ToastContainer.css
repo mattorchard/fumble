@@ -15,7 +15,7 @@
 .toast-message {
   position: relative;
   background-color: #2bc959;
-  animation: toast-slide-in-out 10s ease-in-out 1;
+  animation: toast-slide-in-out 7.5s ease-in-out 1;
   animation-fill-mode: forwards;
   border-radius: 1rem;
   overflow: hidden;
@@ -61,7 +61,7 @@
 .toast-message__progress-filled {
   background-color: white;
   width: 0;
-  animation: fill-progress 10s linear 1;
+  animation: fill-progress 7.5s linear 1;
   animation-fill-mode: forwards;
 }
 .toast-message:hover .toast-message__progress-filled,
