@@ -1,14 +1,11 @@
 import { h } from "preact";
 import usePromise from "../hooks/usePromise";
-import { getRecentSaveMetas } from "../repositories/text-repository";
+import { getSaveMetas } from "../repositories/text-repository";
 import SaveSummary from "./SaveSummary";
 import "./RecentSaves.css";
 
 const RecentSaves = () => {
-  const { error, result: saveMetas, loading } = usePromise(
-    getRecentSaveMetas,
-    []
-  );
+  const { error, result: saveMetas, loading } = usePromise(getSaveMetas, []);
   if (error) {
     return "Something went wrong" + error.toString();
   }

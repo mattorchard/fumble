@@ -80,15 +80,22 @@ export const saveText = async textObject => {
   }
 };
 
-export const getRecentSaveMetas = async (quantity = 5) => {
+export const getSaveMetas = async (quantity = 5, start = 0) => {
   const db = await dbPromise;
 
   const transaction = db.transaction(STORE_TEXT_META);
   const index = transaction.store.index("updatedAt");
   let cursor = await index.openCursor(null, "prev");
+  if (start > 0) {
+    await cursor.advance(start);
+  }
 
   const recentSaves = [];
-  while (cursor && recentSaves.length < quantity) {
+  while (
+    cursor &&
+    cursor.value &&
+    (!quantity || recentSaves.length < quantity)
+  ) {
     recentSaves.push({ ...cursor.value, key: createKey(cursor.value) });
     cursor = await cursor.continue();
   }
